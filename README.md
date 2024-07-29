@@ -2,7 +2,7 @@
 
 This program: 
 
-- Given an DoH sdns records, outputs an sdns record with an up to certificate. 
+- Given a DoH sdns records, outputs a sdns record with an up to date certificate. 
 
 In addition, the program:
 
@@ -11,9 +11,9 @@ In addition, the program:
 
 # Usage 
 
-To update an old sdns record, say "sdns://AgMAAAAAAAAABzkuOS45Ljkg4-E9rvH9MBLbgLOwArXSp_JKfIu4KzGGlL3K8GHRugISZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk", 
+To update an old sdns record, e.g "sdns://AgMAAAAAAAAABzkuOS45LjkgKhX11qy258CQGt5Ou8dDsszUiQMrRuFkLwaTaDABJYoSZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk"
 
-``./dohstamp -sdns "sdns://AgMAAAAAAAAABzkuOS45Ljkg4-E9rvH9MBLbgLOwArXSp_JKfIu4KzGGlL3K8GHRugISZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk"``
+``./dohstamp -sdns "sdns://AgMAAAAAAAAABzkuOS45LjkgKhX11qy258CQGt5Ou8dDsszUiQMrRuFkLwaTaDABJYoSZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk"``
 
 # Compiling
 
