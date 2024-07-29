@@ -1,0 +1,6 @@
+schema = 3
+
+[mod]
+  [mod."github.com/jedisct1/go-dnsstamps"]
+    version = "v0.0.0-20240423203910-07a0735c7774"
+    hash = "sha256-RR7yLiY5usumEdUhXKh5NVEYbnxBoAHB/odXmT8aCJU="
