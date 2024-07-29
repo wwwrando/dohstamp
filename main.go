@@ -38,7 +38,7 @@ func main() {
 
 	var sdns string;
 
-	flag.StringVar(&sdns, "sdns", "", "DoH server sdns without outdated certificate")
+	flag.StringVar(&sdns, "sdns", "", "DoH server sdns with outdated certificate")
 	flag.Parse()
 	if sdns == "" {
 		flag.Usage()
