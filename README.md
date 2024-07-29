@@ -23,6 +23,6 @@ Either
 
 with the result in result/bin/dohstamp. Or 
 
-``go build``
+``go build -o dohstamp``
 
-with the result in ./main in the current directory. 
+with the result in ./dohstamp in the current directory. 
