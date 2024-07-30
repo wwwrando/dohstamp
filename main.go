@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"bytes"
 	"crypto/sha256"
 	"crypto/tls"
@@ -53,14 +54,15 @@ func main() {
 	var show bool
 	var silent bool
 
-	flag.StringVar(&sdns, "sdns", "", "DoH server sdns with outdated certificate")
-	flag.BoolVar(&last, "last", false, "Hash the last certificate in the chain instead of the certificate that signed the last certificate in the chain")
-	flag.BoolVar(&show, "show", false, "Show the retrieved certificates")
-	flag.BoolVar(&silent, "silent", false, "Just return a working sdns, or an error")
+	flag.StringVar(&sdns, "sdns", "", "[mandatory] sdns stamp of a DoH server with a (possibly) outdated certificate")
+	flag.BoolVar(&last, "last", false, "[optional, default = false] hash the last certificate in the chain instead of the certificate that signed the last certificate in the chain")
+	flag.BoolVar(&show, "show", false, "[optional, default = false] show all the retrieved certificates")
+	flag.BoolVar(&silent, "silent", false, "[optional, default = false] only display a working sdns or a one-line error")
 	flag.Parse()
 
 	if sdns == "" {
 		flag.Usage()
+		fmt.Println("\nExample usage:\n\n  " + os.Args[0] + " -sdns " + "\"sdns://AgMAAAAAAAAABzkuOS45LjkgKhX11qy258CQGt5Ou8dDsszUiQMrRuFkLwaTaDABJYoSZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk\"\n")
 		return
 	}
 
