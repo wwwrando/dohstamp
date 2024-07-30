@@ -21,12 +21,18 @@ func GetCertificatesPEM(address string) (string, error) {
         return "", err
     }
     defer conn.Close()
-    var b bytes.Buffer
-    for _, cert := range conn.ConnectionState().PeerCertificates {
+	var b bytes.Buffer
+	i := 0;
+	for _, cert := range conn.ConnectionState().PeerCertificates {
+		if i == 0 {
+			i = i + 1
+			continue;
+		}
         err := pem.Encode(&b, &pem.Block{
             Type: "CERTIFICATE",
             Bytes: cert.Raw,
         })
+
         if err != nil {
             return "", err
         }
@@ -54,6 +60,9 @@ func main() {
 	}
 
 	pemData, err := GetCertificatesPEM(stamp.ServerAddrStr)
+
+	fmt.Println(pemData)
+
 	if err !=  nil {
 		fmt.Println("Unable to connect to " + stamp.ServerAddrStr)
 		fmt.Println(err);
