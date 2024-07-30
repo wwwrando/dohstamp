@@ -6,7 +6,7 @@ This program:
 
 In addition, the program:
 
-- Checks that the certificate is valid for the advertised domains
+- Checks that the certificate is valid
 - Displays additional certificate data
 
 # Usage 
